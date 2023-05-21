@@ -21,11 +21,11 @@ module.exports = function(app) {
     res.json(savedNotes);
   });
 //delete note route
-  app.delete("/api/notes/:id", function(req, res) {
-    let savedNotes = JSON.parse(fs.readFileSync("./db/db.json", "utf8"));
+  app.delete('/api/notes/:id', function(req, res) {
+    let savedNotes = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
     let noteID = req.params.id;
 
-    console.log(`Deleting note with ID ${noteID}`);
+    console.log(`Deleting note with ID ${noteID} line 28 server`);
     savedNotes = savedNotes.filter(currNote => {
         return currNote.id != noteID;
     })
