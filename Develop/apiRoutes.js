@@ -29,7 +29,7 @@ module.exports = function(app) {
     savedNotes = savedNotes.filter(currNote => {
         return currNote.id != noteID;
     })
-
+//write
     fs.writeFileSync("./db/db.json", JSON.stringify(savedNotes));
     res.json(savedNotes);
   });
